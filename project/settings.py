@@ -127,8 +127,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import os
 
-
-
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 LOGOUT_REDIRECT_URL ="http://copymatch.in/"
 
