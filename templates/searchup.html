@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usernames List</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">List of Usernames</h1>
+       
+        
+ <!--dropdown for filters-->
+        {% if objects %}
+            
+                {% for obj in objects %}
+                {% if forloop.counter == 1 %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-end pe-30">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                filters
+                                </button>
+                                <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="http://copymatch.in/client/search_1/{{obj.niche}}">price:0-3000</a></li>
+                                <li><a class="dropdown-item" href="http://copymatch.in/client/search_3/{{obj.niche}}">price:3000-4000</a></li>
+                                <li><a class="dropdown-item" href="http://copymatch.in/client/search_2/{{obj.niche}}">price:4000 and higher</a></li>
+                                </ul>
+                            </div>
+                        </div> 
+                    </div>
+                </div>      
+                {% endif %}               
+                {% endfor %}
+
+                
+                <ul class="list-group">
+                {% for obj in objects %}
+                <li class="list-group-item">
+                    {{ obj.username }}
+                
+                    
+                        <a class="nav-link" href="http://copymatch.in/client/view-work/{{obj.username}}">view {{ obj.username}}'s works</a>
+                        {{obj.rate}}
+                    
+                </li>
+
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="alert alert-warning" role="alert">
+                No users found.
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

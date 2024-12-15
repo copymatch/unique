@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copywriting Analysis</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">CopyMatch.in Tools</a>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h2>Copywriting Analysis</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            <!-- Form fields (Django form rendering) -->
+                            <div class="form-group">
+                                <label for="text">{{ form.text.label }}</label>
+                                <input type="text" id="text" name="text" class="form-control" />
+                                <button type="submit" class="btn btn-primary">Analyze</button>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block">Analyze</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Feedback Section -->
+                {% if feedback %}
+                    <div class="card mt-4">
+                        <div class="card-header bg-info text-white">
+                            <h3>Feedback</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>{{ feedback }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
