@@ -136,7 +136,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # User remains logged in after closing 
 
 
 #project location:-/home/ec2-user/project
-#pulic ip:-13.235.82.202
+#pulic ip:-
 
 #"C:\Users\manuj\OneDrive\Desktop\django pro\project" 
 #C:\Users\manuj\OneDrive\Desktop\django pro\project\project\settings.py

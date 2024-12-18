@@ -8,7 +8,6 @@ from copywriter.models import Profile,Works
 from client.models import Feedback,Message
 from django.db.models import Q
 from .forms import TextAnalysisForm
-from .utils import analyze_text
 from django.urls import reverse
 
 
@@ -149,31 +148,3 @@ def conversation_box(request,username):
 
 
 #to be done later
-def analyze_text_view(request):
-    feedback = None
-
-    if request.method == "POST":
-        form = TextAnalysisForm(request.POST)
-        if form.is_valid():
-            text = form.cleaned_data["text"]
-            feedback = analyze_text(text)
-    else:
-        form = TextAnalysisForm()
-
-    return render(request, "analyze_text.html", {"form": form, "feedback": feedback})
-
-def AI_rating(request):
-    username=request.user.username
-    obj=get_object_or_404(Profile,username=username)
-    if request.method=="POST":
-        text=request.POST.get("text")
-        rating=analyze_text(text)
-        obj.rate=rating
-        obj.save()
-        return HttpResponseRedirect("http://copymatch.in/copywriter/home")
-    return render(request,"AI_rating.html")
-
-#password-->2111_2010,username-->goat
-
-#things to be done:-unread messages/new messages
-#scp -r /path/to/your/templates/ ec2-user@<your-server-ip>:/home/ec2-user/project/
