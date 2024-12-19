@@ -56,7 +56,7 @@ def profile(request):
         return HttpResponseRedirect("http://copymatch.in/copywriter/ai_rating") 
     
     return render(request,"profile.html")
-@login_required
+
 def home(request):
     return render(request,"copyhome.html")
 
