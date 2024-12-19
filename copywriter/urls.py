@@ -17,7 +17,7 @@ urlpatterns = [
     path("view-feedback/",views.view_feedbacks,name="view-feedback"),
     path("view-messages/",views.view_messages,name="view messages"),
     path("chat/<str:username>",views.conversation_box,name="chatboxcp"),
-    path("analyze/",views.analyze_text_view,name="analyse"),
-    path('logout/', LogoutView.as_view(), name='logout'),
-    path("ai_rating/",views.AI_rating,name="ai_rating")
+
+    path('logout/', LogoutView.as_view(), name='logout')
+   
 ]
