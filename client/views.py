@@ -26,9 +26,9 @@ def user_login(request):
         
         if user is not None:
             login(request,user)
-            return HttpResponseRedirect("http://127.0.0.1:8000/client/home") # Redirect to a success page (e.g., home)
+            return HttpResponseRedirect("http://copymatch.in/client/home") # Redirect to a success page (e.g., home)
         if user is None:
-            return HttpResponseRedirect('http://127.0.0.1:8000/client/create-profile')
+            return HttpResponseRedirect('http://copymatch.in/client/create-profile')
     
     return render(request, 'logincl.html')  # Render the login page
 
@@ -52,7 +52,7 @@ def profile(request):
         user=User.objects.create_user(username=username,email=email,password=password)
         user.save()
         login(request,user)
-        return HttpResponseRedirect("http://127.0.0.1:8000/client/home") 
+        return HttpResponseRedirect("http://copymatch.in/client/home") 
     
     return render(request,"profilecl.html")
 
@@ -127,7 +127,7 @@ def feedback(request):
         feedback=request.POST.get("feedback")
         data=Feedback(username=username,feedback=feedback)
         data.save()
-        return HttpResponseRedirect("http://127.0.0.1:8000/client/home")
+        return HttpResponseRedirect("http://copymatch.in/client/home")
     return render(request,"feedback.html")
 
 #template to be changed
@@ -158,7 +158,7 @@ def conversation_box(request,username):
         message=request.POST.get("message")
         data=Message(user_sender=user_1,user_receiver=user_2,message=message)
         data.save()
-        return HttpResponseRedirect("http://127.0.0.1:8000/client/home")
+        return HttpResponseRedirect("http://copymatch.in/client/home")
    
     return render(request,"conversation_box.html",{'object1':message1}) 
 #password-->2111_2010,username-->goat

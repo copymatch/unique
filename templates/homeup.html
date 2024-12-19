@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>127.0.0.1:8000</title>
+    <title>copymatch.in</title>
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">127.0.0.1:8000</a>
+        <a class="navbar-brand" href="#">copymatch.in</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,10 +18,10 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/">Home</a>
+            <a class="nav-link active" aria-current="page" href="http://copymatch.in/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://127.0.0.1:8000/about">About</a>
+            <a class="nav-link" href="http://copymatch.in/about">About</a>
           </li>
         </ul>
       </div>
@@ -30,7 +30,7 @@
 
   <figure class="text-center">
     <blockquote class="blockquote">
-      <p>Welcome to CopyMach.in, let's get started!</p>
+      <p>Welcome to CopyMatch.in, let's get started!</p>
     </blockquote>
   </figure>
 
@@ -41,11 +41,11 @@
               <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Card image">
                 <div class="card-body">
                     <h5 class="card-title">A Client</h5>
-                    <p class="card-text">Are you seraching for a cost-effective copywriter for your business?</p>
+                    <p class="card-text">Are you searching for a cost-effective copywriter for your business?</p>
                     {% if user.is_authenticated %}
-                    <a href="http://127.0.0.1:8000/client/home" class="btn btn-primary">Click here to get started</a>
+                    <a href="http://copymatch.in/client/home" class="btn btn-primary">Click here to get started</a>
                     {% else %}
-                    <a href="http://127.0.0.1:8000/client/" class="btn btn-primary">Click here to get started</a>
+                    <a href="http://copymatch.in/client/" class="btn btn-primary">Click here to get started</a>
                     {% endif %}
                 </div>
             </div>
@@ -57,9 +57,9 @@
                     <h5 class="card-title">A Copywriter</h5>
                     <p class="card-text">Are you a copywriter searching for clients and looking to grow your portfolio?</p>
                     {% if user.is_authenticated %}
-                    <a href="http://127.0.0.1:8000/copywriter/home" class="btn btn-primary">Click here to get started</a>
+                    <a href="http://copymatch.in/copywriter/home" class="btn btn-primary">Click here to get started</a>
                     {% else %}
-                    <a href="http://127.0.0.1:8000/copywriter/" class="btn btn-primary">Click here to get started</a>
+                    <a href="http://copymatch.in/copywriter/" class="btn btn-primary">Click here to get started</a>
                     {% endif %}
                 </div>
             </div>

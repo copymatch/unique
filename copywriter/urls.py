@@ -17,7 +17,6 @@ urlpatterns = [
     path("view-feedback/",views.view_feedbacks,name="view-feedback"),
     path("view-messages/",views.view_messages,name="view messages"),
     path("chat/<str:username>",views.conversation_box,name="chatboxcp"),
-
     path('logout/', LogoutView.as_view(), name='logout')
    
 ]

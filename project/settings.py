@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mfdsnld+wozsqxa=i$92m)^h7h2l+^w1x)hsqsfz5pr4^6l!x^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1:8000","www.127.0.0.1:8000",'127.0.0.1']
+ALLOWED_HOSTS = ["copymatch.in","www.copymatch.in",'127.0.0.1']
 
 
 # Application definition
@@ -128,7 +128,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import os
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-LOGOUT_REDIRECT_URL ="http://127.0.0.1:8000/"
+LOGOUT_REDIRECT_URL ="http://copymatch.in/"
 
 # Session expiry settings
 SESSION_COOKIE_AGE = 12096000 
