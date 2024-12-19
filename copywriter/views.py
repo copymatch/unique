@@ -26,9 +26,9 @@ def user_login(request):
         
         if user is not None:
             login(request,user)
-            return HttpResponseRedirect("http://copymatch.in/copywriter/home/") # Redirect to a success page (e.g., home)
+            return HttpResponseRedirect("http://127.0.0.1:8000/copywriter/home/") # Redirect to a success page (e.g., home)
         if user is None:
-            return HttpResponseRedirect('http://copymatch.in/copywriter/create-profile')
+            return HttpResponseRedirect('http://127.0.0.1:8000/copywriter/create-profile')
     
     return render(request, 'logincp.html')  # Render the login page
 
@@ -53,7 +53,7 @@ def profile(request):
         login(request,user)
 
         
-        return HttpResponseRedirect("http://copymatch.in/copywriter/ai_rating") 
+        return HttpResponseRedirect("http://127.0.0.1:8000/copywriter/ai_rating") 
     
     return render(request,"profile.html")
 
@@ -72,7 +72,7 @@ def upload_work(request):
         works=request.POST.get("works")
         work=Works(username=username,works=works)
         work.save()
-        return HttpResponseRedirect("http://copymatch.in/copywriter/home")
+        return HttpResponseRedirect("http://127.0.0.1:8000/copywriter/home")
 
     return render(request,"works.html")
 #to complete!!!
@@ -102,7 +102,7 @@ def edit_profile(request):
         obj.email=email
         obj.price=price
         obj.save()
-        return HttpResponseRedirect("http://copymatch.in/copywriter/home")
+        return HttpResponseRedirect("http://127.0.0.1:8000/copywriter/home")
     
     return render(request,"edit_profile.html")
  
